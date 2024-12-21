@@ -14,8 +14,19 @@ const cookieParser=require('cookie-parser');
 
 mongoDBConnection("foodDelivery");
 
+server.use(cors({
+    origin: ['http://localhost:5173', 'https://food-delivery-lac-five.vercel.app'],
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+    credentials: true,
+    allowedHeaders: ['Content-Type', 'Authorization', 'Accept', 'Origin', 'X-Requested-With'],
+    exposedHeaders: ['Set-Cookie'],
+    preflightContinue: true,
+    optionsSuccessStatus: 200
+}));
+
 server.use(express.json());
 server.use(cookieParser());
+server.use(express.urlencoded({ extended: true }));
 server.use(express.urlencoded({ extended: true }));
 server.use(cors());
 server.use("/user", userRouter);

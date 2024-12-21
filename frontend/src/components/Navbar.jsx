@@ -14,7 +14,7 @@ const Navbar=()=>{
     }
     
     return(
-        <div className="sticky top-0 z-50 p-4 shadow-lg bg-white">
+        <div className="sticky top-0 z-50 p-4 shadow-lg bg-white h-10">
             <div className="flex justify-between items-center">
                 <h1 className="text-2xl font-bold font-dancing">BeFoodie</h1>
                 

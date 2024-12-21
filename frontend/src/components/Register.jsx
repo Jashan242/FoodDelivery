@@ -100,7 +100,7 @@ const Register = () => {
               { label: "Phone", value: phone, setValue: setPhone, type: "text", error: errors.phone },
             ].map(({ label, value, setValue, type = "text", error }, index) => (
               <div className="relative mt-5 py-2" key={index}>
-                <label className="text-xl font-vollkorn font-bold text-[#b8165c] absolute -top-3 left-2 bg-white">
+                <label className="text-lg font-vollkorn font-bold text-[#b8165c] absolute -top-3 left-2 bg-white">
                   {label}
                 </label>
                 <input
@@ -108,7 +108,7 @@ const Register = () => {
                   placeholder={`Enter Your ${label}`}
                   value={value}
                   onChange={(e) => setValue(e.target.value)}
-                  className="w-full p-2 text-lg font-literata border border-white/50 rounded-lg bg-white/50 outline-none"
+                  className="w-full p-2 text-md font-literata border border-white/50 rounded-lg bg-white/50 outline-none"
                   required
                 />
                 {error && <p className="text-red-500 text-sm">{error}</p>}

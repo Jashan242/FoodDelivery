@@ -62,20 +62,20 @@ const Login = () => {
             </h1>
             
             <div className="relative mt-5 py-2">
-              <label className="text-xl font-vollkorn font-bold text-[#b8165c] absolute -top-3 left-2 bg-white">Username</label>
+              <label className="text-lg font-vollkorn font-bold text-[#b8165c] absolute -top-3 left-2 bg-white">Username</label>
               <input type="text" 
                 placeholder="Enter Your Username" 
-                className="w-full p-2 text-lg font-literata border border-white/50 rounded-lg bg-white/50 outline-none"
+                className="w-full p-2 text-md font-literata border border-white/50 rounded-lg bg-white/50 outline-none"
                 onChange={handleUsername}
                 required  
                 />
             </div>
 
             <div className="relative mt-5 py-2">
-              <label className="text-xl font-vollkorn font-bold text-[#b8165c] absolute -top-3 left-2 bg-white">Password</label>
+              <label className="text-lg font-vollkorn font-bold text-[#b8165c] absolute -top-3 left-2 bg-white">Password</label>
               <input type="password" 
                 placeholder="Enter Password" 
-                className="w-full p-2 text-lg font-literata border border-white/50 rounded-lg bg-white/50 outline-none"
+                className="w-full p-2 text-md font-literata border border-white/50 rounded-lg bg-white/50 outline-none"
                 onChange={handlePassword}
                 required
                 />

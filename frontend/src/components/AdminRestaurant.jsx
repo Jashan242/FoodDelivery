@@ -12,7 +12,7 @@ const AdminRestaurant=()=>{
     },[])
 
     const deleteFoodItem=async(id)=>{
-        const response=await fetch(`http://localhost:3030/food/${id}`,{
+        const response=await fetch(`https://fooddelivery-d0xd.onrender.com/food/${id}`,{
             method:'DELETE',
             headers:{
                 'Content-Type':'application/json',
@@ -32,7 +32,7 @@ const AdminRestaurant=()=>{
 
     const fetchRestaurant=async()=>{
         try {
-            const response=await fetch(`http://localhost:3030/food/restaurant/${id}`,{
+            const response=await fetch(`https://fooddelivery-d0xd.onrender.com/food/restaurant/${id}`,{
                 method:'GET',
                 headers:{
                     'Content-Type':'application/json',

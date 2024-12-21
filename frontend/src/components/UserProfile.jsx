@@ -8,7 +8,7 @@ const UserProfile=()=>{
         fetchUserDetails();
     },[]);
     const fetchUserDetails=async()=>{
-        const response=await fetch(`http://localhost:3030/user/${user}`,{
+        const response=await fetch(`https://fooddelivery-d0xd.onrender.com/user/${user}`,{
             method:'GET',
             headers:{
                 'Content-Type':'application/json',

@@ -32,7 +32,7 @@ const RestaurantCard = () => {
         if(!token){
             navigate("/login");
         }
-        const response = await fetch(`http://localhost:3030/cart`,{
+        const response = await fetch(`https://fooddelivery-d0xd.onrender.com/cart`,{
             method:'POST',
             headers:{
                 'Authorization':`Bearer ${token}`,

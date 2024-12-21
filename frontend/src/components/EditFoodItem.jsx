@@ -21,7 +21,7 @@ const EditFoodItem = () => {
 
   const fetchFoodItem = async () => {
     try {
-      const response = await fetch(`http://localhost:3030/food/${id}`, {
+      const response = await fetch(`https://fooddelivery-d0xd.onrender.com/food/${id}`, {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -52,7 +52,7 @@ const EditFoodItem = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`http://localhost:3030/food/${id}`, {
+      const response = await fetch(`https://fooddelivery-d0xd.onrender.com/food/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

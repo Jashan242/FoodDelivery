@@ -11,7 +11,7 @@ const Profile=()=>{
 
     const fetchUserDetails=async()=>{
         try {
-            const response=await fetch(`http://localhost:3030/restaurant/owner/${id}`,{
+            const response=await fetch(`https://fooddelivery-d0xd.onrender.com/restaurant/owner/${id}`,{
                 method:'GET',
                 headers:{
                     'Content-Type':'application/json',

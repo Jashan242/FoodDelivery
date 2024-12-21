@@ -18,7 +18,7 @@ const Login = () => {
 
   const handleSubmit = async(e) => {
     e.preventDefault();
-    const res=await fetch("http://localhost:3030/user/login", {
+    const res=await fetch("https://fooddelivery-d0xd.onrender.com/user/login", {
       method: "POST",
       body: JSON.stringify({ username, password }),
       headers: {

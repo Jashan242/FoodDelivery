@@ -40,7 +40,7 @@ const Register = () => {
     if (!validate()) return;
 
     try {
-      const response = await fetch("http://localhost:3030/user/", {
+      const response = await fetch("https://fooddelivery-d0xd.onrender.com/user/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

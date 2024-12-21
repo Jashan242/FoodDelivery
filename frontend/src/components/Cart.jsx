@@ -21,7 +21,7 @@ const Cart = () => {
 
   const fetchCart = async () => {
     try {
-      const response = await fetch("http://localhost:3030/cart", {
+      const response = await fetch("https://fooddelivery-d0xd.onrender.com/cart", {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
@@ -47,7 +47,7 @@ const Cart = () => {
   };
 
   const clearCart = async () => {
-    const response = await fetch("http://localhost:3030/cart/clear", {
+    const response = await fetch("https://fooddelivery-d0xd.onrender.com/cart/clear", {
       method: "POST",
       headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
     });
@@ -62,7 +62,7 @@ const Cart = () => {
 
   const updateItemQuantity = async (foodItemId, increment) => {
     try {
-      const response = await fetch("http://localhost:3030/cart/update", {
+      const response = await fetch("https://fooddelivery-d0xd.onrender.com/cart/update", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,

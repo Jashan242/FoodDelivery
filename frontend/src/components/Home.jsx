@@ -15,7 +15,7 @@ const Home = () => {
 
   const fetchData = async () => {
     const token = localStorage.getItem("token");
-    const response = await fetch("http://localhost:3030/restaurant/", {
+    const response = await fetch("https://fooddelivery-d0xd.onrender.com/restaurant/", {
       headers: {
         // Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",

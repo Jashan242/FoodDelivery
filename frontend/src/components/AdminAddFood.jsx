@@ -33,7 +33,7 @@ const AddFoodItem = () => {
     formData.append("avatar", imageUrl); // Add the file here
   
     try {
-      const response = await fetch("http://localhost:3030/food", {
+      const response = await fetch("https://fooddelivery-d0xd.onrender.com/food", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,

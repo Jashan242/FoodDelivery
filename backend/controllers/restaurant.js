@@ -32,15 +32,6 @@ exports.createRestaurant = async (req, res) => {
       });
     }
 
-    // // Handle image upload
-    // let imageUrl;
-    // if (req.file) {
-    //   const cloudinaryResponse = await uploadOnCloudinary(req.file.path);
-    //   if (cloudinaryResponse) {
-    //     imageUrl = cloudinaryResponse.url;
-    //   }
-    // }
-
     const avatarUrl=req.files?.avatar[0]?.path;
     const coverImageUrl=req.files?.coverImage[0]?.path;
 

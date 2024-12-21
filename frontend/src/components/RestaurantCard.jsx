@@ -56,13 +56,13 @@ const RestaurantCard = () => {
                     </div>
                         <div className="flex flex-col gap-1">
                         <div className="flex items-center gap-1">
-                            <h1 className="text-2xl font-bold py-1">{item.name}</h1>
+                            <h1 className="text-xl font-bold py-1">{item.name}</h1>
                             <img src={item.isVeg ? veg : nonVeg} alt={item.isVeg ? "Veg" : "Non-Veg"} className="w-6 h-6"/>
                         </div>
                             <p className="text-md font-semibold">{item.description}</p>
                             <p className="text-md font-semibold text-[#b8165c]">₹{item.price}</p>
                             <p className="text-md text-gray-500 font-semibold">⭐ {item.ratings}</p>
-                            <button className="bg-[#b8165c] w-24 text-white border-2 border-[#b8165c] px-4 py-2 rounded-md font-semibold hover:border-[#b8165c] hover:text-[#b8165c] hover:bg-white" onClick={()=>addToCart(item._id)}>Add</button>
+                            <button className="bg-[#b8165c] w-24 text-white border-2 border-[#b8165c] px-2 py-1 rounded-md font-semibold hover:border-[#b8165c] hover:text-[#b8165c] hover:bg-white" onClick={()=>addToCart(item._id)}>Add</button>
                         </div>
                     </div>
                 ))

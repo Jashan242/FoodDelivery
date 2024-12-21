@@ -57,7 +57,7 @@ const Login = () => {
       <div className="w-full md:w-1/2 flex items-center justify-center px-10 bg-gradient-to-br from-white/50 to-white/30">
         <div className="w-full max-w-md backdrop-blur-sm bg-white/30 p-8 rounded-2xl shadow-lg border border-white/30">
           <form>
-            <h1 className="text-2xl md:text-4xl font-bold font-dancing text-center mb-10 text-[#b8165c]">
+            <h1 className="text-2xl md:text-3xl font-bold font-dancing text-center mb-10 text-[#b8165c]">
               BeFoodie
             </h1>
             

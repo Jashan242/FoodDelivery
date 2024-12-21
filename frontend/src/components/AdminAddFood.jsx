@@ -65,8 +65,8 @@ const AddFoodItem = () => {
   return (
     <div>
       <AdminNav />
-      <div className="p-4 flex flex-col items-center justify-center w-full mt-10">
-        <h2 className="text-4xl font-bold mb-4 text-[#b8165c] font-vollkorn">
+      <div className="p-4 flex flex-col items-center justify-center w-full mt-4">
+        <h2 className="text-4xl font-bold mb-2 text-[#b8165c] font-vollkorn">
           Add Food Item
         </h2>
         {/* <p className="text-center text-lg font-vollkorn font-bold text-[#b8165c]">({succMsg})</p> */}

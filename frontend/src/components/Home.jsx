@@ -46,23 +46,23 @@ const Home = () => {
       <div className="md:w-1/2 w-full mx-auto flex justify-center items-center p-6 gap-2">
         <input type="text" placeholder="Search for restaurants" className="w-full p-2 rounded-md border-2 border-gray-300 focus:outline-[#b8165c]" value={searchInput} onChange={(e) => setSearchInput(e.target.value)} />
         <button className="bg-[#b8165c] text-white font-bold text-sm md:text-xl border-2 border-[#b8165c] hover:bg-white hover:border-[#b8165c] hover:text-[#b8165c] p-2 rounded-md" 
-        onClick={handleSearch} onChange={handleSearch()}>Search</button>
+        onClick={handleSearch} onKeyDown={(e)=>e.key==="Enter" && handleSearch()}>Search</button>
       </div>
       <div className="flex m-6 flex-col md:flex-wrap md:justify-center md:flex-row items-center justify-center gap-6">
         {searchResults.length > 0 ? (
           searchResults.map((item) => (
             <div
               key={item._id}
-              className="flex flex-col rounded-xl w-full md:w-1/2 lg:w-1/5 cursor-pointer hover:scale-90 transition-transform duration-300 ease-in-out shadow-lg"
+              className="flex flex-col rounded-xl w-full md:w-1/2 lg:w-1/6 cursor-pointer hover:scale-90 transition-transform duration-300 ease-in-out shadow-lg"
               onClick={() => navigate(`/restaurant/${item._id}`)}
             >
               <img
                 src={item.image}
                 alt="restaurant"
-                className="w-full h-60 object-cover rounded-t-xl "
+                className="w-full h-40 object-cover rounded-t-xl "
               />
               <div className="px-4 py-2">
-                <h1 className="text-2xl font-bold py-2">{item.name}</h1>
+                <h1 className="text-xl font-bold py-2">{item.name}</h1>
                 <div className="flex flex-row justify-between text-semibold">
                   <p>⭐{item.averageRating}</p>
                   <p>{item.deliveryTime}</p>
@@ -71,7 +71,7 @@ const Home = () => {
                   {item.cuisine.join(", ")}
                 </p>
                 <hr className="border-gray-200 border-2 my-2"></hr>
-                <p className="text-semibold text-gray-500">{item.address}</p>
+                <p className="text-semibold text-gray-500 text-sm">{item.address}</p>
               </div>
             </div>
           ))

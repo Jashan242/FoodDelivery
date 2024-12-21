@@ -14,9 +14,9 @@ const Navbar=()=>{
     }
     
     return(
-        <div className="sticky top-0 z-50 p-4 shadow-lg bg-white h-10">
+        <div className="sticky top-0 z-50 p-4 shadow-lg bg-white">
             <div className="flex justify-between items-center">
-                <h1 className="text-2xl font-bold font-dancing">BeFoodie</h1>
+                <h1 className="text-xl font-bold font-dancing">BeFoodie</h1>
                 
                 <button 
                     className="md:hidden flex flex-col gap-1.5"
@@ -34,7 +34,7 @@ const Navbar=()=>{
                         user ?(
                             <div className="flex items-center gap-1 relative">
                             <div onClick={() => setShowDropdown(!showDropdown)} className="flex items-center gap-1 cursor-pointer">
-                            <img src={userImg} alt="user" className="w-10 h-10 rounded-full"/>
+                            <img src={userImg} alt="user" className="w-8 h-8 rounded-full"/>
                             <h1 
                                 className="text-xl text-[#b8165c] font-bold cursor-pointer" 
                             >
@@ -57,8 +57,8 @@ const Navbar=()=>{
                             </div>
                         ) : (
                             <>
-                            <Link to="/login" className="border-2 border-[#b8165c] px-4 py-2 rounded-lg hover:bg-[#b8165c] hover:text-white">Login</Link>
-                            <Link to="/register" className="bg-[#b8165c] border-2 border-[#b8165c] text-white px-4 py-2 hover:border-2 hover:border-[#b8165c] hover:bg-white hover:text-[#b8165c] rounded-lg">Sign In</Link>
+                            <Link to="/login" className="border-2 border-[#b8165c] px-2 py-1 rounded-lg hover:shadow-lg hover:text-gray-500">Login</Link>
+                            <Link to="/register" className="bg-[#b8165c] text-white px-2 py-1 rounded-lg hover:shadow-lg hover:bg-[#da6396]">Sign In</Link>
                             </>
                         )
                     }

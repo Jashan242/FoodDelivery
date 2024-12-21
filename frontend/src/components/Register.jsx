@@ -81,10 +81,10 @@ const Register = () => {
           className="w-full md:h-full object-cover"
         />
       </div>
-      <div className="w-full md:w-1/2 flex items-center justify-center py-10 px-4 md:px-10 bg-gradient-to-br from-white/50 to-white/30">
+      <div className="w-full md:w-1/2 flex items-center justify-center py-6 px-4 md:px-8 bg-gradient-to-br from-white/50 to-white/30">
         <div className="w-full max-w-md backdrop-blur-sm bg-white/30 p-8 rounded-2xl shadow-lg border border-white/30">
           <form onSubmit={handleSubmit}>
-            <h1 className="text-2xl md:text-4xl font-bold font-dancing text-center mb-10 text-[#b8165c]">
+            <h1 className="text-2xl md:text-3xl font-bold font-dancing text-center mb-4 text-[#b8165c]">
               BeFoodie
             </h1>
             <p className="text-center text-lg py-4 font-vollkorn font-bold text-[#b8165c]">

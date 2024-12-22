@@ -12,6 +12,11 @@ import AdminRestaurant from './components/AdminRestaurant'
 import EditFoodItem from './components/EditFoodItem'
 import AdminAddFood from './components/AdminAddFood'
 import UserProfile from './components/UserProfile'
+import Checkout from './components/Checkout'
+import Order from './components/Order'
+import AdminOrders from './components/AdminOrders'
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
 
@@ -63,11 +68,24 @@ function App() {
     {
       path:'/userProfile',
       element:<UserProfile/>
+    },
+    {
+      path:'/checkout',
+      element:<Checkout/>
+    },
+    {
+      path:'/orders',
+      element:<Order/>
+    },
+    {
+      path:'/admin/orders/:id',
+      element:<AdminOrders/>
     }
   ])
   return (
    <div>
     <RouterProvider router={appRouter}></RouterProvider>
+    <ToastContainer/>
    </div>
   )
 }

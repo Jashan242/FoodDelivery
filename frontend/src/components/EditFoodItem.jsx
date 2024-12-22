@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import AdminNav from "./AdminNav";
+import { toast } from "react-toastify";
 
 const EditFoodItem = () => {
   const { id } = useParams(); // Get the food item ID from the URL
@@ -64,10 +65,11 @@ const EditFoodItem = () => {
       if (!response.ok) {
         throw new Error("Failed to update food item");
       }
-
-      alert("Food item updated successfully");
+      
+      toast.success("Food item updated successfully");
       navigate(`/admin/restaurant/${id}`); // Redirect back to the admin page
     } catch (error) {
+      toast.error("Error updating food item");
       console.error("Error updating food item:", error);
     }
   };

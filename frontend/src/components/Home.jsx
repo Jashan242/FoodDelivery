@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import { useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
+import Shimmer from "./Shimmer";
 
 const Home = () => {
   const [restro, setRestro] = useState([]);
@@ -34,6 +35,10 @@ const Home = () => {
     setSearchResults(filter);
   };
 
+  if(restro.length === 0){
+    return <Shimmer/>;
+  }
+
   return (
     <div className="w-full min-h-screen">
       <Navbar />
@@ -44,10 +49,16 @@ const Home = () => {
         </div>
       </div>
       <div className="md:w-1/2 w-full mx-auto flex justify-center items-center p-6 gap-2">
-        <input type="text" placeholder="Search for restaurants" className="w-full p-2 rounded-md border-2 border-gray-300 focus:outline-[#b8165c]" value={searchInput} onChange={(e) => setSearchInput(e.target.value)} />
+        <input type="text" placeholder="Search for restaurants" className="w-full p-2 rounded-md border-2 border-gray-300 focus:outline-[#b8165c]" value={searchInput} onChange={(e) => setSearchInput(e.target.value)} onKeyDown={(e) => {
+       if (e.key === "Enter") {
+           handleSearch();
+       }
+   }} />
         <button className="bg-[#b8165c] text-white font-bold text-sm md:text-xl border-2 border-[#b8165c] hover:bg-white hover:border-[#b8165c] hover:text-[#b8165c] p-2 rounded-md" 
         onClick={handleSearch} onKeyDown={(e)=>e.key==="Enter" && handleSearch()}>Search</button>
       </div>
+
+
       <div className="flex m-6 flex-col md:flex-wrap md:justify-center md:flex-row items-center justify-center gap-6">
         {searchResults.length > 0 ? (
           searchResults.map((item) => (

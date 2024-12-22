@@ -10,6 +10,7 @@ const Navbar=()=>{
         localStorage.removeItem("user");
         localStorage.removeItem("token");
         localStorage.removeItem("userId");
+        localStorage.removeItem("restaurantId");
         window.location.href="/";
     }
     

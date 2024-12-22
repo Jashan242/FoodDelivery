@@ -4,6 +4,7 @@ import { useState } from "react";
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 //   const [token, setToken] = useState("");
 
   const navigate = useNavigate();
@@ -41,7 +42,7 @@ const Login = () => {
       }
     }
     else{
-      throw new Error("Login failed");
+      setError("Login failed. Please try again.");
     }
 }
 
@@ -57,11 +58,11 @@ const Login = () => {
       <div className="w-full md:w-1/2 flex items-center justify-center px-10 bg-gradient-to-br from-white/50 to-white/30">
         <div className="w-full max-w-md backdrop-blur-sm bg-white/30 p-8 rounded-2xl shadow-lg border border-white/30">
           <form>
-            <h1 className="text-2xl md:text-3xl font-bold font-dancing text-center mb-10 text-[#b8165c]">
+            <h1 className="text-2xl md:text-3xl font-bold font-dancing text-center mb-2 text-[#b8165c]">
               BeFoodie
             </h1>
-            
-            <div className="relative mt-5 py-2">
+            <p className="text-gray-500 font-semibold text-center mb-5 underline">{error}</p>
+            <div className="relative mt-5 py-2 ">
               <label className="text-lg font-vollkorn font-bold text-[#b8165c] absolute -top-3 left-2 bg-white">Username</label>
               <input type="text" 
                 placeholder="Enter Your Username" 

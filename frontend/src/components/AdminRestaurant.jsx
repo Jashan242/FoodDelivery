@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import AdminNav from "./AdminNav";
 import veg from "../assets/veg.svg";
 import nonVeg from "../assets/nonveg.svg";
-
+import { toast } from "react-toastify";
 const AdminRestaurant=()=>{
     const [restaurant,setRestaurant]=useState([]);
     const id=localStorage.getItem("restaurantId");
@@ -20,11 +20,11 @@ const AdminRestaurant=()=>{
             }
         });
         if(response.ok){
-            alert("Food item deleted successfully");
+            toast.success("Food item deleted successfully");
             fetchRestaurant();
         }
         else{
-            console.log("Error deleting food item");
+            toast.error("Error deleting food item");
         }
     }
 

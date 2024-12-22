@@ -87,7 +87,7 @@ const Register = () => {
             <h1 className="text-2xl md:text-3xl font-bold font-dancing text-center mb-4 text-[#b8165c]">
               BeFoodie
             </h1>
-            <p className="text-center text-lg py-4 font-vollkorn font-bold text-[#b8165c]">
+            <p className="text-center text-lg py-4 font-vollkorn font-bold text-gray-500">
               {succMsg}
             </p>
 

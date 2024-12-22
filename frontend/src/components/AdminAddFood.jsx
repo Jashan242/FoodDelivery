@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AdminNav from "./AdminNav";
-
+import { toast } from "react-toastify";
 const AddFoodItem = () => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
@@ -11,7 +11,6 @@ const AddFoodItem = () => {
   const [isVeg, setIsVeg] = useState(null);
   const [category, setCategory] = useState("");
   const [imageUrl, setImageUrl] = useState(null);
-  const [succMsg, setSuccMsg] = useState(null);
 
   const restaurantId = localStorage.getItem("restaurantId");
 
@@ -45,8 +44,7 @@ const AddFoodItem = () => {
         throw new Error("Failed to add food item");
       }
   
-      setSuccMsg("Food item added successfully.");
-      alert("Food item added successfully.");
+      toast.success("Food item added successfully.");
       navigate("/admin"); // Redirect to admin page
     } catch (error) {
       console.error("Error adding food item:", error);
@@ -69,7 +67,7 @@ const AddFoodItem = () => {
         <h2 className="text-4xl font-bold mb-2 text-[#b8165c] font-vollkorn">
           Add Food Item
         </h2>
-        {/* <p className="text-center text-lg font-vollkorn font-bold text-[#b8165c]">({succMsg})</p> */}
+
         <form
           encType="multipart/form-data"
           onSubmit={handleSubmit}

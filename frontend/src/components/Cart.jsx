@@ -4,9 +4,11 @@ import cartImg from "../assets/cart.png"
 import veg from "../assets/veg.svg"
 import nonVeg from "../assets/nonveg.svg"
 import { useNavigate } from "react-router-dom";
+import ShimmerCart from "./ShimmerCart";
 
 const Cart = () => {
   const [cart, setCart] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
 
   const token = localStorage.getItem("token");
@@ -21,6 +23,7 @@ const Cart = () => {
 
   const fetchCart = async () => {
     try {
+      setIsLoading(true);
       const response = await fetch("https://fooddelivery-d0xd.onrender.com/cart", {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -43,6 +46,8 @@ const Cart = () => {
       console.log("cart",cart);
     } catch (error) {
       console.log(error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -77,6 +82,10 @@ const Cart = () => {
       console.error(error);
     }
   };
+
+  if (isLoading) {
+    return <ShimmerCart />;
+  }
 
   return (
     <div>
@@ -118,18 +127,19 @@ const Cart = () => {
                   ⭐ {item.foodItem.ratings}
                 </p>
                 <div className="w-24 bg-white text-[#b8165c] text-xl flex justify-center items-center rounded-md px-4 py-2">
-                  <button
-                    className="font-bold px-2 cursor-pointer bg-[#b8165c] text-white rounded-md"
-                    onClick={() => updateItemQuantity(item.foodItem._id, true)}
-                  >
-                    +
-                  </button>
-                  <h1 className="font-semibold mx-2">{item.quantity}</h1>
+                  
                   <button
                     className="font-bold px-2 cursor-pointer bg-[#b8165c] text-white rounded-md"
                     onClick={() => updateItemQuantity(item.foodItem._id, false)}
                   >
                     -
+                  </button>
+                  <h1 className="font-semibold mx-2">{item.quantity}</h1>
+                  <button
+                    className="font-bold px-2 cursor-pointer bg-[#b8165c] text-white rounded-md"
+                    onClick={() => updateItemQuantity(item.foodItem._id, true)}
+                  >
+                    +
                   </button>
                 </div>
               </div>
@@ -166,7 +176,7 @@ const Cart = () => {
           0
         )}
       </h1>
-      <button className="bg-[#b8165c] text-white px-2 py-1 md:px-4 md:py-2 rounded-md font-semibold hover:bg-white hover:text-[#b8165c] hover:border hover:border-[#b8165c]">Proceed to Checkout</button>
+      <button className="bg-[#b8165c] text-white px-2 py-1 md:px-4 md:py-2 rounded-md font-semibold hover:bg-white hover:text-[#b8165c] hover:border hover:border-[#b8165c]" onClick={()=>navigate("/checkout")}>Proceed to Checkout</button>
         </div>
         </div>
       )}

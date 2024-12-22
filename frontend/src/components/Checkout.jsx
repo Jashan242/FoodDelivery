@@ -113,7 +113,7 @@ const Checkout = () => {
             }
         } catch (error) {
             console.error("Error placing order:", error);
-            toast.error("Failed to place order");
+            toast.error("Failed to place order. Check all fields and try again.");
         }
     };
     
@@ -166,12 +166,12 @@ const Checkout = () => {
                                 required
                                 className="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-[#b8165c]" 
                             />
-                            <button 
+                            {/* <button 
                                 type="submit"
                                 className="w-full bg-[#b8165c] font-bold text-white py-2 px-4 rounded-md hover:bg-white hover:text-[#b8165c] hover:border hover:border-[#b8165c]"
                             >
                                 Deliver to this address
-                            </button>
+                            </button> */}
                         </form>
                     </div>
 

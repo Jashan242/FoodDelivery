@@ -64,24 +64,56 @@ const RestaurantCard = () => {
         setCart((prev)=>({...prev,[foodItemId]:1}));
     }
 
-    const incrementItem = (foodItemId) => {
-        setCart((prev) => ({
-          ...prev,
-          [foodItemId]: (prev[foodItemId] || 0) + 1,
-        }));
-      };
-    
-      const decrementItem = (foodItemId) => {
-        setCart((prev) => {
-          const updatedCart = { ...prev };
-          if (updatedCart[foodItemId] > 1) {
-            updatedCart[foodItemId] -= 1;
-          } else {
-            delete updatedCart[foodItemId];
-          }
-          return updatedCart;
-        });
-      };
+    const incrementItem = async (foodItemId) => {
+        const token = localStorage.getItem('token');
+        try {
+            const response = await fetch("https://fooddelivery-d0xd.onrender.com/cart/update", {
+                method: "POST",
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ foodItemId, increment: true })
+            });
+            
+            if (response.ok) {
+                setCart((prev) => ({
+                    ...prev,
+                    [foodItemId]: (prev[foodItemId] || 0) + 1,
+                }));
+            }
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
+    const decrementItem = async (foodItemId) => {
+        const token = localStorage.getItem('token');
+        try {
+            const response = await fetch("https://fooddelivery-d0xd.onrender.com/cart/update", {
+                method: "POST",
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ foodItemId, increment: false })
+            });
+            
+            if (response.ok) {
+                setCart((prev) => {
+                    const updatedCart = { ...prev };
+                    if (updatedCart[foodItemId] > 1) {
+                        updatedCart[foodItemId] -= 1;
+                    } else {
+                        delete updatedCart[foodItemId];
+                    }
+                    return updatedCart;
+                });
+            }
+        } catch (error) {
+            console.error(error);
+        }
+    };
 
     return (
         <div>

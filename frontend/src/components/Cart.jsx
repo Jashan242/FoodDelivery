@@ -9,6 +9,7 @@ import ShimmerCart from "./ShimmerCart";
 const Cart = () => {
   const [cart, setCart] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [isUpdating, setIsUpdating] = useState(false);
   const navigate = useNavigate();
 
   const token = localStorage.getItem("token");
@@ -23,7 +24,9 @@ const Cart = () => {
 
   const fetchCart = async () => {
     try {
-      setIsLoading(true);
+      if (!cart.length) {
+        setIsLoading(true);
+      }
       const response = await fetch("https://fooddelivery-d0xd.onrender.com/cart", {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -48,6 +51,7 @@ const Cart = () => {
       console.log(error);
     } finally {
       setIsLoading(false);
+      setIsUpdating(false);
     }
   };
 
@@ -67,6 +71,7 @@ const Cart = () => {
 
   const updateItemQuantity = async (foodItemId, increment) => {
     try {
+      setIsUpdating(true);
       const response = await fetch("https://fooddelivery-d0xd.onrender.com/cart/update", {
         method: "POST",
         headers: {
@@ -80,6 +85,7 @@ const Cart = () => {
       fetchCart(); // Re-fetch the cart to update the UI
     } catch (error) {
       console.error(error);
+      setIsUpdating(false);
     }
   };
 

@@ -34,7 +34,7 @@ const RestaurantCard = () => {
 
     const fetchRestaurant= async () => {
         const token = localStorage.getItem('token');
-        const response = await fetch(`http://localhost:3030/restaurant/${id}`,{
+        const response = await fetch(`https://fooddelivery-d0xd.onrender.com/restaurant/${id}`,{
             method:'GET',
             headers:{
                 'Authorization':`Bearer ${token}`,

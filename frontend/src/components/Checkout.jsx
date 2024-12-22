@@ -95,7 +95,7 @@ const Checkout = () => {
         }
     
         try {
-            const response = await fetch("http://localhost:3030/order", {
+            const response = await fetch("https://fooddelivery-d0xd.onrender.com/order", {
                 method: "POST",
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("token")}`,

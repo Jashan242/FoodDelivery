@@ -9,7 +9,7 @@ const Order=()=>{
    }, []);
     const fetchOrders = async () => {
        try {
-           const response = await fetch('http://localhost:3030/order', {
+           const response = await fetch('https://fooddelivery-d0xd.onrender.com/order', {
                headers: {
                    'Authorization': `Bearer ${localStorage.getItem('token')}`,
                    'Content-Type': 'application/json'

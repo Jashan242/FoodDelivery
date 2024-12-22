@@ -4,6 +4,7 @@ const userRouter = require("./routes/user");
 const restaurantRouter = require("./routes/restaurant");
 const foodRouter=require('./routes/foodItem');
 const cartRouter=require('./routes/cart');
+const orderRouter=require('./routes/orders');
 const {mongoDBConnection}=require('./connection/connect');
 const port=process.env.PORT || 3030;
 const {checkAuth}=require('./middlewares/auth');
@@ -35,7 +36,7 @@ server.use("/food", foodRouter);
 server.use(checkAuth);
 
 server.use("/cart",cartRouter);
-
+server.use("/order",orderRouter);
 server.get("/", (req, res)=>{
     res.send("Welcome to BeFoodie");
 })

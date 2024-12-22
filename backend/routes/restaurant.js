@@ -1,6 +1,6 @@
 const express=require('express');
 const router=express.Router();
-const {createRestaurant, getRestaurant, updateRestaurant, deleteRestaurant,getRestaurantByOwner}=require('../controllers/restaurant');
+const {createRestaurant, getRestaurant, updateRestaurant, deleteRestaurant,getRestaurantByOwner,getRestaurantById}=require('../controllers/restaurant');
 // const {upload}=require('../middlewares/multer');
 const multer = require('multer');
 
@@ -20,5 +20,6 @@ router.get('/',getRestaurant);
 router.put('/:id',updateRestaurant);
 router.delete('/:id',deleteRestaurant);
 router.get('/owner/:id',getRestaurantByOwner);
+router.get('/:id',getRestaurantById);
 
 module.exports=router;

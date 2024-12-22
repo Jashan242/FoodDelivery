@@ -81,6 +81,12 @@ exports.getRestaurant=async(req,res)=>{
     res.status(200).send({message:'Restaurant fetched successfully',restaurant});
 }
 
+exports.getRestaurantById=async(req,res)=>{
+    const {id}=req.params;
+    const restaurant=await Restaurant.findById(id);
+    res.status(200).send({message:'Restaurant fetched successfully',restaurant});
+}
+
 exports.updateRestaurant = async (req, res) => {
     try {
         const { id } = req.params;

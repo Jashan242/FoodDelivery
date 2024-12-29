@@ -28,12 +28,10 @@ const Login = () => {
     })
     if(res.ok){
       const data=await res.json();
-      console.log(username);
-      console.log("Role",data.role);
       localStorage.setItem("user", username);
       localStorage.setItem("token", data.token);
       localStorage.setItem("userId", data.userId);
-      console.log(data);
+      // console.log(data);
       if(data.role==="admin"){
         navigate("/admin");
       }

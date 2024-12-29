@@ -54,10 +54,7 @@ exports.login = (req, res) => {
         });
       console.log("User : ", User);
       const token = generationToken(User[0]);
-      // const token = JSON.stringify({
-      //   _id:user[0]._id,
-      //   username:user[0].username,
-      // });
+      
       const expires = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000);
       return res
         .status(200)
@@ -98,16 +95,3 @@ exports.getUserDetails=(req,res)=>{
   })
 }
 
-// exports.getUserByRole=(req, res)=>{
-//     // const {role}=req.params.role;
-//     const role = req.params.role.replace(':role=', '');
-//     console.log(role);
-//     User.find({role})
-//     .then((user)=>{
-//         console.log(user);
-//         res.status(200).send({user})
-//     })
-//     .catch((err)=>{
-//         res.status(400).send({message:err})
-//     })
-// }

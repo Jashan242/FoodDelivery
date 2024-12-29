@@ -1,7 +1,6 @@
 import './App.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Home from './components/Home'
-import About from './components/About'
 import Cart from './components/Cart'
 import Login from './components/Login'
 import Register from './components/Register'
@@ -24,10 +23,6 @@ function App() {
     {
       path:'/',
       element:<Home/>
-    },
-    {
-      path:'/about',
-      element:<About/>
     },
     {
       path:'/cart',

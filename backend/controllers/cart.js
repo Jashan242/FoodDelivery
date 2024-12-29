@@ -84,9 +84,9 @@ exports.getCart = async (req, res) => {
         }
         
         res.status(200).json({ cart });
-        console.log(cart);
+        // console.log(cart);
     } catch (error) {
-        console.error('Error fetching cart:', error);
+        // console.error('Error fetching cart:', error);
         res.status(500).json({
             message: 'Error fetching cart',
             error: error.message
@@ -139,7 +139,7 @@ exports.removeFromCart = async (req, res) => {
             cart: updatedCart,
         });
     } catch (error) {
-        console.error('Error removing item from cart:', error);
+        // console.error('Error removing item from cart:', error);
         res.status(500).json({
             message: 'Error removing item from cart',
             error: error.message,
@@ -157,7 +157,7 @@ exports.clearCart = async (req, res) => {
         res.status(200).json({ message: 'Cart cleared' });
     }
     catch(error){
-        console.error('Error clearing cart:', error);
+        // console.error('Error clearing cart:', error);
         res.status(500).json({ message: 'Error clearing cart', error: error.message });
     }
 }
@@ -191,7 +191,7 @@ exports.updateCartItem = async (req, res) => {
         const updatedCart = await Cart.findById(userCart._id).populate('items.foodItem');
         res.status(200).json({ message: 'Cart updated successfully', cart: updatedCart });
     } catch (error) {
-        console.error('Error updating cart:', error);
+        // console.error('Error updating cart:', error);
         res.status(500).json({ message: 'Error updating cart', error: error.message });
     }
 };

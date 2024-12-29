@@ -56,8 +56,8 @@ const createOrder = async (req, res) => {
         });
 
     } catch (error) {
-        console.error("Order creation error:", error);
-        console.error("Full error object:", JSON.stringify(error, null, 2));
+        // console.error("Order creation error:", error);
+        // console.error("Full error object:", JSON.stringify(error, null, 2));
         res.status(500).json({ 
             message: "Failed to create order",
             error: error.message 

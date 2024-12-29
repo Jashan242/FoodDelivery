@@ -34,9 +34,9 @@ const EditFoodItem = () => {
       }
 
       const data = await response.json();
-      console.log("editdata",data);
+      // console.log("editdata",data);
       setFormData(data.foodItem); // Pre-fill the form with the fetched data
-      console.log("formdata",formData);
+      // console.log("formdata",formData);
     } catch (error) {
       console.error("Error fetching food item:", error);
     }

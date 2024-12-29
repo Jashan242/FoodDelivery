@@ -27,9 +27,9 @@ const RestaurantCard = () => {
             }
         });
         const data = await response.json();
-        console.log(data);
+        // console.log(data);
         setFoodItems(data);
-        console.log(foodItems);
+        // console.log(foodItems);
     }
 
     const fetchRestaurant= async () => {
@@ -42,7 +42,7 @@ const RestaurantCard = () => {
             }
         });
         const data = await response.json();
-        console.log(data);
+        // console.log(data);
         setRestaurant(data.restaurant);
     }
 
@@ -60,7 +60,7 @@ const RestaurantCard = () => {
             body:JSON.stringify({foodItem:foodItemId,quantity:1})
         });
         const data = await response.json();
-        console.log(data);
+        // console.log(data);
         setCart((prev)=>({...prev,[foodItemId]:1}));
     }
 
